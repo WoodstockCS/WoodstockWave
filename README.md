@@ -1,35 +1,24 @@
-# WoodstockWave
-
-![wave-example](wave-example.png)
-
-## Description
-In this assignment you will create your own customized animated wave similar to the Wave created by Jerome Herr, here: [https://www.openprocessing.org/sketch/152169](https://www.openprocessing.org/sketch/152169).
-
-## Instructions
-PART 1:
-
-1. Fork this repo.
-1. paste the (broken) starter code from the repo's .pde file into processing
-1. fix the code, so it draws a set of concentric (inside each other) circles
-1. set your own stroke, fill, background, strokeWeight, number of circles, width between circles
-
-PART 2:
-
-1. declare two new variables as floats: `arcStart` and `arcEnd`
-1. set their initial values to 0
-1. in your draw function, change the `ellipse` function into an `arc` function, by just replacing the word "ellipse" with "arc", then add two more arguments, so the fifth argument is the variable called `arcStart` and the sixth argument is `arcEnd`.
-1. in the last line of the draw function, increment the two variables by 0.05
-
-PART 3:
-
-[ coming soon ]
-
-WRAP-UP:
-
-1. Copy your code into your WoodstockWave repo's `.pde` file
-1. Update the header and footer text of `index.html`.
-1. Check your work at `<YourUsername>.github.io/WoodstockWave`
-1. Create a pull request.
-
-## Credit
-This assignment is based on original work created by [Jerome Herr](https://www.openprocessing.org/user/28663).
+float arcStart=PI;
+float arcEnd=HALF_PI;
+float maxArcEnd=TWO_PI;
+float movement=0;
+float speed=PI/10000;
+float num=800;
+void setup()
+{
+  strokeWeight(7);
+  size(1000, 1000);
+}
+void draw()
+{
+  background(155);
+  int x = 1;
+  noFill();
+  while(x <= 1000){ 
+    arcEnd = map(sin(movement + (maxArcEnd / num * x)), -1, 1, arcStart, maxArcEnd);
+    arc(500, 500, x, x, arcStart, arcEnd);
+    x = x + 10;
+    movement+=speed;
+    arcEnd=arcEnd+.05;
+  }
+}
