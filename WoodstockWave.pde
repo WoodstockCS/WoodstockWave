@@ -1,3 +1,7 @@
+// Jason Drebber
+// WoodstockWave
+// Done in collaboration with Mr. Smith
+
 float x = PI;
 float movement = 0;
 float n;
