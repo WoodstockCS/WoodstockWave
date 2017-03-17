@@ -1,7 +1,7 @@
 float beginning= PI;
 float end=TWO_PI;
 float movement=0;
-int size=200;
+int x=200;
 
 
 void setup()
@@ -16,13 +16,13 @@ void setup()
 void draw()
 {
   stroke(random(255),random(255),random(255));
-  size=10;
+  x=10;
   background(0);
   noFill();
-  while (size<200)
+  while (x<200)
   {
-      end=map(sin(movement + (TWO_PI /(size/17))), -1, 1, PI, TWO_PI);
-    arc(300, 300, size, size, beginning, end);
+      end=map(sin(movement + (TWO_PI /(x/17))), -1, 1, PI, TWO_PI);
+    arc(300, 300, x, x, beginning, end);
     size=size+20;
   }
   movement=movement + PI/60;
