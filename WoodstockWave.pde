@@ -23,7 +23,7 @@ void draw()
   {
       end=map(sin(movement + (TWO_PI /(x/17))), -1, 1, PI, TWO_PI);
     arc(300, 300, x, x, beginning, end);
-    size=size+20;
+    x=x+20;
   }
   movement=movement + PI/60;
 }
