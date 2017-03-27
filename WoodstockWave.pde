@@ -1,9 +1,24 @@
-// based on https://www.openprocessing.org/sketch/152169
-// https://creativecommons.org/licenses/by-sa/3.0/
+float end = TWO_PI;
+float movement = 0;
+int size;
+int i;
 
-size(400, 400);
-int x = 5;
-while(x <= 50) {
-  ellipse(200, 200, x, x);
-  x = x + 10;
+void setup() {
+  size(600, 600);
+  strokeWeight(4);
+
+}
+
+void draw() {
+  background(0);
+  stroke(random(255), random(255), random(255) );
+  noFill();
+  i = 0;
+  while (i < 25) {
+    size= i * 22;
+    end = map(sin(movement+ (TWO_PI / 25 * i)), -1, 1, PI, TWO_PI);
+    arc(width/2, height/2, size, size, PI, end);
+    i = i + 1;
+  }
+  movement = movement + PI/60;
 }
