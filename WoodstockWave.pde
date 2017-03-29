@@ -17,7 +17,7 @@ void draw()
   end = map(sin(movement + (TWO_PI / 10)), -1, 1, PI, TWO_PI);
   while (tall < 500)
   {
-    end = map(sin(movement + (TWO_PI / (size/30))), -1, 1, PI, TWO_PI);
+    end = map(sin(movement + (TWO_PI / (tall/30))), -1, 1, PI, TWO_PI);
     arc(width/2, height/2, tall, tall, begining, end);
     tall = tall + 20;
   }
