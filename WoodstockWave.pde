@@ -1,7 +1,7 @@
 float begining = PI;
 float end = TWO_PI;
 float movement = 0;
-int puppies = 300;
+int tall = 300;
 
 void setup()
 {
@@ -13,13 +13,13 @@ void draw()
 {
   background(37,85,33);
   noFill();
-  puppies = 90;
+  tall = 90;
   end = map(sin(movement + (TWO_PI / 10)), -1, 1, PI, TWO_PI);
-  while (puppies < 500)
+  while (tall < 500)
   {
     end = map(sin(movement + (TWO_PI / (size/30))), -1, 1, PI, TWO_PI);
-    arc(width/2, height/2, puppies, puppies, begining, end);
-    puppies = puppies + 20;
+    arc(width/2, height/2, tall, tall, begining, end);
+    tall = tall + 20;
   }
 
   movement = movement + PI/60;
