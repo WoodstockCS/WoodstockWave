@@ -4,7 +4,7 @@
 float beginning = PI;
 float end = TWO_PI;
 float movement = 0;
-int size = 300;
+int tessa = 300;
 int i;
 
 
@@ -18,14 +18,14 @@ strokeWeight(5);
 void draw() {
   background(90);
   //fill(random (255), random (255),random (255));
-  size = 10;
+  tessa = 10;
   i=0;
-  while (size < 290)
+  while (tessa < 290)
   {
     fill(random (255), random (255),random (255));
   end = map(sin(movement + (TWO_PI / 24*i)), -1, 1, PI, TWO_PI);
-  arc(width/2, height/2, size, size, beginning, end);
-  size=size+20;
+  arc(width/2, height/2, tessa, tessa, beginning, end);
+  tessa=tessa+20;
   i=i+1;
   }
   movement = movement + PI/60;
